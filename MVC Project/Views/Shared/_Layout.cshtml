@@ -5,11 +5,15 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.7.1.js"></script>
     @RenderSection("styles", required: false)
+
+    <style>
+        
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="#">IsDB-R56</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -17,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Home</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Features</a>
@@ -34,8 +38,10 @@
         @RenderBody()
     </div>
 
-    <footer class="container">
-        <p>&copy; @DateTime.Now.Year - IsDB-Bisew</p>
+    <footer>
+        <div class="container bg-dark pb-1 pt-3">
+            <p class="text-light d-flex justify-content-center">&copy; @DateTime.Now.Year - IsDB-Bisew</p>
+        </div>
     </footer>
 
 
