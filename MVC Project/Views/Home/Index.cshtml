@@ -1,8 +1,43 @@
-﻿
+﻿@model IEnumerable<MVC_Project.Models.Product>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="display-4 alert alert-info text-center">Welcome to our home page</h2>
+<h2 class="display-4 alert alert-info text-center">Products Information</h2>
+<div class="row">
+    <div class="col">
+        <div class="d-flex justify-content-end">
+            @Html.ActionLink("Add Item", "AddItem", new {}, new {@class="btn btn-success btn-md mb-3"})
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(x => x.ProductId)</th>
+                    <th>@Html.DisplayNameFor(x => x.ProductName)</th>
+                    <th>@Html.DisplayNameFor(x => x.UnitPrice)</th>
+                    <th>@Html.DisplayNameFor(x => x.Discount)</th>
+                    <th>Discount Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(x => item.ProductId)</td>
+                        <td>@Html.DisplayFor(x => item.ProductName)</td>
+                        <td>@Html.DisplayFor(x => item.UnitPrice)</td>
+                        <td>@((item.Discount*100).ToString("0.##")+"%")</td>
+                        <td>@((item.UnitPrice*item.Discount).ToString("0.##"))</td>
+                        <td>
+                            @Html.ActionLink("Edit", "EditItem", new { id = item.ProductId }, new { @class = "btn btn-primary btn-sm" })
+                            @Html.ActionLink("Delete", "DeleteItem", new { id = item.ProductId }, new { @class = "btn btn-danger btn-sm" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 

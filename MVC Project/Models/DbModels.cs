@@ -12,6 +12,7 @@ namespace MVC_Project.Models
 {
     public class Product
     {
+        [Display(Name = "Product Id")]
         public int ProductId { get; set; }
         [Required, StringLength(40), Display(Name = "Product Name")]
         public string ProductName { get; set; }
