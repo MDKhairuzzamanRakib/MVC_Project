@@ -165,6 +165,7 @@
     <Content Include="Scripts\jquery-3.7.1.min.map" />
     <Content Include="Views\Home\AddItem.cshtml" />
     <Content Include="Views\Home\EditItem.cshtml" />
+    <Content Include="Views\Home\DeleteItem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
